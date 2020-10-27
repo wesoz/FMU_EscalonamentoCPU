@@ -43,15 +43,15 @@ void scanProcess(Process* process) {
 	int readValue;
 
 	printf("%s:", SCANPROCESS_REQUEST_PRIORITY);
-	scanInt(&process->priority, SCANPROCESS_MIN_PRIORITY, SCANPROCESS_MAX_PRIORITY);
-	//process->priority = readValue;
+	scanInt(process.priority, SCANPROCESS_MIN_PRIORITY, SCANPROCESS_MAX_PRIORITY);
+	
 	itoa(process->priority, priority, 10);
 	system("cls");
 	printProcess(process->name, priority, "", state);
 
 	printf("%s:", SCANPROCESS_REQUEST_DURATION);
-	scanInt(&process->duration, SCANPROCESS_MIN_DURATION, SCANPROCESS_MAX_DURATION);
-	//process->duration = readValue;
+	scanInt(process.duration, SCANPROCESS_MIN_DURATION, SCANPROCESS_MAX_DURATION);
+	
 	itoa(process->duration, duration, 10);
 	system("cls");
 	printProcess(process->name, priority, duration, state);
