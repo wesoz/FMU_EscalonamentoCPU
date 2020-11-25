@@ -16,12 +16,13 @@ typedef struct Table {
 	int rowCount;
 	int colCount;
 	int cursor;
+	int offset;
 } Table;
 
 TableHeader createTableHeader(int maxLength, char *text);
-Table createTable(int colCount, int rowCount, TableHeader *headers);
+Table createTable(int colCount, int rowCount, TableHeader *headers, int offset);
 void insertTableCells(Table *table, Cell *cells);
 void updateTableCell(Table *table, Cell *cells, int position);
-void printTable(Table table);
+void printTable(Table table, int cursorPosition);
 
 #endif

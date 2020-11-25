@@ -20,8 +20,8 @@ int main(int argc, char *argv[]) {
 	headers[2] = createTableHeader(10, "Duration");
 	headers[3] = createTableHeader(9, "State");
 
-	Table table = createTable(3, 4, headers);
-	printTable(table);
+	Table table = createTable(3, 4, headers, 4);
+	printTable(table, 0);
 
 	Cell cells[4];
 
@@ -32,7 +32,7 @@ int main(int argc, char *argv[]) {
 
 	insertTableCells(&table, cells);
 
-	printTable(table);
+	printTable(table, 0);
 
 	printf("Informe quantos processos serão criados: ");
 	int processQuantity;
