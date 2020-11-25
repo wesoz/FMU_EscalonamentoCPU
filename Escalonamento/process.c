@@ -35,7 +35,7 @@ void scanProcess(Process* process) {
 	printProcess("", "", "", state);
 
 	printf("%s:", SCANPROCESS_REQUEST_NAME);
-	scanf("%s", process->name);
+	scanf("%[^\n]s", process->name);
 	
 	system("cls");
 	printProcess(process->name, "", "", state);
@@ -43,14 +43,14 @@ void scanProcess(Process* process) {
 	int readValue;
 
 	printf("%s:", SCANPROCESS_REQUEST_PRIORITY);
-	scanInt(process.priority, SCANPROCESS_MIN_PRIORITY, SCANPROCESS_MAX_PRIORITY);
+	scanInt(&process->priority, SCANPROCESS_MIN_PRIORITY, SCANPROCESS_MAX_PRIORITY);
 	
 	itoa(process->priority, priority, 10);
 	system("cls");
 	printProcess(process->name, priority, "", state);
 
 	printf("%s:", SCANPROCESS_REQUEST_DURATION);
-	scanInt(process.duration, SCANPROCESS_MIN_DURATION, SCANPROCESS_MAX_DURATION);
+	scanInt(&process->duration, SCANPROCESS_MIN_DURATION, SCANPROCESS_MAX_DURATION);
 	
 	itoa(process->duration, duration, 10);
 	system("cls");

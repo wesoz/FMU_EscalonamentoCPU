@@ -3,9 +3,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define SCANINT_INVALID_ENTRY "Digite apenas nÃºmeros"
-#define SCANINT_MAX_VIOLATION "O nÃºmero deve ser atÃ© %d"
-#define SCANINT_MIN_VIOLATION "O nÃºmero deve ser igual ou maior que %d"
+#define SCANINT_INVALID_ENTRY "Digite apenas números"
+#define SCANINT_MAX_VIOLATION "O número deve ser até %d"
+#define SCANINT_MIN_VIOLATION "O número deve ser igual ou maior que %d"
 
 void scanInt(int *value, int minValue, int maxValue) {
 	int invalid = 1;
