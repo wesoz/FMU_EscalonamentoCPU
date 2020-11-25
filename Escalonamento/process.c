@@ -18,9 +18,7 @@
 #define STATE_BLOCKED 2
 #define STATE_RUNNING 3
 
-#define STATE_READY_DESC "Pronto"
-#define STATE_BLOCKED_DESC "Espera"
-#define STATE_RUNNING_DESC "Execução"
+
 
 void scanProcess(Process* process) {
 

@@ -14,12 +14,24 @@ Process* processes;
 int main(int argc, char *argv[]) {
 	setlocale(LC_ALL, "Portuguese");
 
-	Cell headers[3];// = malloc(sizeof(Cell) * 3);
-	headers[0] = createCell(9, "Process");
-	headers[1] = createCell(10, "Priority");
-	headers[2] = createCell(10, "Duration");
+	TableHeader headers[4];
+	headers[0] = createTableHeader(9, "Process");
+	headers[1] = createTableHeader(10, "Priority");
+	headers[2] = createTableHeader(10, "Duration");
+	headers[3] = createTableHeader(9, "State");
 
-	Table table = createTable(3, 3, headers);
+	Table table = createTable(3, 4, headers);
+	printTable(table);
+
+	Cell cells[4];
+
+	cells[0].value = "P1";
+	cells[1].value = "5";
+	cells[2].value = "10";
+	cells[3].value = STATE_READY_DESC;
+
+	insertTableCells(&table, cells);
+
 	printTable(table);
 
 	printf("Informe quantos processos serão criados: ");
@@ -27,12 +39,12 @@ int main(int argc, char *argv[]) {
 	scanInt(&processQuantity, MAIN_MIN_PROCESSES, MAIN_MAX_PROCESSES);
 
 	processes = malloc(sizeof(Process) * processQuantity);
-	
-	free(processes);
 
 	for(int i = 0; i < processQuantity; i++) {
 		scanProcess(&processes[i]);
 	}
+
+	free(processes);
 
 	printf("\n\n");
 	system("pause");
